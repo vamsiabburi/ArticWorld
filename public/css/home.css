@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Comforter&family=Poppins:ital,wght@1,200&display=swap');
+@import 'nav.css';
+@import 'footer.css';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Architects Daughter', cursive;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+
+/* slider */
+
+.slider {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    margin-top: 470px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid rgb(96, 101, 102);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 30px;
+}
+
+.manual-btn:hover {
+    background: rgba(27, 27, 27, 0.452);
+}
+
+#radio1:checked~.first {
+    margin-left: 0;
+}
+
+#radio2:checked~.first {
+    margin-left: -20%;
+}
+
+#radio3:checked~.first {
+    margin-left: -40%;
+}
+
+#radio4:checked~.first {
+    margin-left: -60%;
+}
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 470px;
+}
+
+.navigation-auto div {
+    border: 2px solid rgba(22, 21, 21, 0.651);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 30px;
+}
+
+#radio1:checked~.navigation-auto .auto-btn1 {
+    background-color: #242323;
+}
+
+#radio2:checked~.navigation-auto .auto-btn2 {
+    background-color: #242323;
+}
+
+#radio3:checked~.navigation-auto .auto-btn3 {
+    background-color: #242323;
+}
+
+#radio4:checked~.navigation-auto .auto-btn4 {
+    background-color: #242323;
+}
+
+.text {
+    color: #242323;
+    font-size: 3em;
+    padding: 8px 12px;
+    position: relative;
+    bottom: 50%;
+    width: 100%;
+    left: 20%;
+    text-align: center;
+    color: rgb(8, 8, 8);
+    text-shadow: 5px 0px 1px #ff7d7d;
+}
+
+hr {
+    margin-left: 335px;
+    width: 70%;
+    margin-top: 16px;
+}
+
+
+/* 
+product */
+
+.product {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0px;
+}
+
+.product-container {
+    padding: 0 10vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.product-container::-webkit-scrollbar {
+    display: none;
+}
+
+.product-category {
+    padding: 0 10vw;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+}
+
+.product-card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 450px;
+    margin-left: 40px;
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.product-thumb {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.discount-tag {
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ff7d7d;
+    right: 10px;
+    top: 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.card-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.product-card:hover .card-btn {
+    opacity: 1;
+}
+
+.card-btn:hover {
+    background-color: #efefef;
+}
+
+.product-info {
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+}
+
+.product-brand {
+    text-transform: uppercase;
+}
+
+.product-short-des {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    opacity: 0.5;
+    text-transform: capitalize;
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.actual-price {
+    margin-left: 20px;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+
+/* previ arrow */
+
+.pre-btn,
+.nxt-btn {
+    border: none;
+    width: 10vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0)0%, #fff 100%);
+    cursor: pointer;
+    z-index: 8;
+}
+
+.pre-btn {
+    left: 0;
+}
+
+.nxt-btn {
+    right: 0;
+}
+
+.pre-btn i,
+.nxt-btn i {
+    opacity: 0.2;
+    font-size: 1.9rem;
+}
+
+.pre-btn:hover i,
+.nxt-btn:hover i {
+    opacity: 1;
+}
+
+
+/* collections */
+
+.collection-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+
+.collection1st {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.collection {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+}
+
+.collection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 1s;
+}
+
+.third {
+    width: 90%;
+    height: 300px;
+    padding: 10px;
+}
+
+.third img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.9s;
+}
+
+.third img:hover {
+    opacity: 0.5;
+    transform: scale(0.96);
+}
+
+.third p {
+    position: relative;
+    top: -60%;
+    left: 50%;
+    right: -50%;
+    color: rgb(2, 2, 2);
+    text-shadow: 5px 0px 1px #fff;
+    font-size: 2.6rem;
+}
+
+.collection p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(2, 2, 2);
+    text-shadow: 5px 0px 1px #fff;
+    font-size: 2.6rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.collection img:hover {
+    opacity: 0.5;
+    transform: scale(0.96);
+}
+
+
+/* countdown */
+
+.coming-soon div h2 {
+    font-size: 5rem;
+    font-weight: bold;
+    padding: 3rem;
+    color: rgb(253, 253, 253);
+    text-shadow: 5px 9px 4px rgb(247, 119, 59);
+}
+
+.coming-soon {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../img/countdown.png') round;
+    object-fit: cover;
+    color: rgb(117, 16, 50);
+    text-shadow: 5px 0px 1px rgb(245, 252, 233);
+    text-transform: capitalize;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.day,
+.hour,
+.minute,
+.second {
+    font-size: 3.9rem;
+    font-weight: 800;
+}
+
+.countbatch {
+    font-size: 3rem;
+    font-weight: 800;
+}
